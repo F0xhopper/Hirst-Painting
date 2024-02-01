@@ -3,6 +3,8 @@ import random
 import colorgram
 mr_turtle = Turtle()
 colormode(255)
+mr_turtle.penup()
+mr_turtle.speed(80)
 # rgb_colors = []
 # colors = colorgram.extract('hirsts-painting.jpg',30)
 # print(colors)
@@ -23,7 +25,15 @@ number_of_dots = 100
 
 
 for dot_count in range(1,number_of_dots +1):
-    mr_turtle.dot(20)
+    mr_turtle.dot(20,random.choice(color_list))
+    mr_turtle.forward(50)
+
+    if dot_count % 10 == 0:
+        mr_turtle.setheading(90)
+        mr_turtle.forward(50)
+        mr_turtle.setheading(180)
+        mr_turtle.forward(500)
+        mr_turtle.setheading(0)
     
 
 
